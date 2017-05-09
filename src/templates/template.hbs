@@ -1,0 +1,23 @@
+<script id="my-info-template" type="text/x-handlebars-template">
+    <p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}.</p>
+</script>
+
+<script id="quote-template" type="text/x-handlebars-template">
+    <h5>Favorite {{name}} Quotes</h5>
+    <ol>
+        {{#each sayings}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ol>
+    {{{bio}}}<br><br>
+    {{makeLink "Yogi Berra Museum" "http://yogiberramuseum.org/"}}<br>
+    {{changeColor "Make my text red" color="red"}}<br>
+</script>
+
+<script id="block-helper-template" type="text/x-handlebars-template">
+    {{#makeRadio "size"}}
+        Small
+        Medium
+        Large
+    {{/makeRadio}}
+</script>

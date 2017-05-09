@@ -1,0 +1,99 @@
+<div class="container">
+    <h1>LEARNING HANDLEBARS</h1>
+
+    <section class="expressions">
+        <h3>Basic Expressions</h3>
+        <div class="well">
+            <b>Context</b>
+            <div class="indented">
+                <code>
+                    "info": {<br>
+                        <span class="tab"></span>"name": "Dave",<br>
+                        <span class="tab"></span>"street": "123 Main Street",<br>
+                        <span class="tab"></span>"city": "Atlanta",<br>
+                        <span class="tab"></span>"state": "Georgia"<br>
+                    }
+                </code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Template</b>
+            <div class="indented">
+                <code>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}.</code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Result</b>
+            <div class="indented" id="info-data"></div>
+        </div>
+    </section>
+
+    <section class="each-block-helper">
+        <h3><code>each</code> Block Helper, Unescaping HTML with the Triple-stash, and Custom Helpers</h3>
+        <div class="well">
+            <b>Context</b>
+            <div class="indented">
+                <code>
+                    "quotes": {<br>
+                        <span class="tab"></span>"name": "Yogi Berra",<br>
+                        <span class="tab"></span>"sayings": [<br>
+                            <span class="tab"></span><span class="tab"></span>"If you don't know where you are going, you mind wind up someplace else.",<br>
+                            <span class="tab"></span><span class="tab"></span>"You better cut the pizza in four pieces because I'm not hungry enough to eat six.",<br>
+                            <span class="tab"></span><span class="tab"></span>"I never said most of the things I said.",<br>
+                            <span class="tab"></span><span class="tab"></span>"Nobody goes there anymore because it's too crowded."<br>
+                        <span class="tab"></span>],<br>
+                        <span class="tab"></span>"bio": "&lt;i&gt;Lawrence Peter \"Yogi\" Berra (May 12, 1925 – September 22, 2015) was an American professional baseball catcher, manager, and coach who played 19 seasons in Major League Baseball (MLB) (1946–63, 1965) (all but the last for the New York Yankees). He was an 18-time All-Star, and won 10 World Series championships as a player—more than any other player in MLB history. Berra had a career batting average of .285, while hitting 358 home runs and 1,430 runs batted in. He is one of only five players to win the American League Most Valuable Player Award three times. He is widely regarded as one of the greatest catchers in baseball history, and was elected to the Baseball Hall of Fame in 1972.&lt;/i&gt;"<br>
+                    }
+                </code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Template</b>
+            <div class="indented">
+                <code>
+                    &lt;h5&gt;Favorite {{name}} Quotes&lt;/h5&gt;<br>
+                    &lt;ol&gt;<br>
+                        <span class="tab"></span>{{#each sayings}}<br>
+                            <span class="tab"></span><span class="tab"></span>&lt;li&gt;{{this}}&lt;/li&gt;<br>
+                        <span class="tab"></span>{{/each}}<br>
+                    &lt;/ol&gt;<br>
+                    {{{bio}}}&lt;br&gt;&lt;br&gt;<br>
+                    {{makeLink "Yogi Berra Museum" "http://yogiberramuseum.org/"}}&lt;br&gt;<br>
+                    {{changeColor "Make my text red" color="red"}}&lt;br&gt;<br>
+                </code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Result</b>
+            <div class="indented" id="quote-data"></div>
+        </div>
+    </section>
+
+    <section class="block-expressions">
+        <h3>Block Expressions</h3>
+        <div class="well">
+            <b>Context</b>
+            <div class="indented">
+                <code>
+                    {}
+                </code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Template</b>
+            <div class="indented">
+                <code>
+                    {{#makeRadio "size"}}<br>
+                        <span class="tab"></span>Small<br>
+                        <span class="tab"></span>Medium<br>
+                        <span class="tab"></span>Large<br>
+                    {{/makeRadio}}
+                </code>
+            </div>
+        </div>
+        <div class="well">
+            <b>Result</b>
+            <div class="indented" id="block-expression-data"></div>
+        </div>
+    </section>
+</div>
